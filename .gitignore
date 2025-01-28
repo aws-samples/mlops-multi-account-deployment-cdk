@@ -1,0 +1,29 @@
+*.js
+!jest.config.js
+
+export_vars.sh
+*.d.ts
+dist
+node_modules
+
+.idea/
+
+# for lambda layer built packages
+src/lambda_layer/requests/python/*
+# for the lambda layer I built myself
+!src/lambda_layer/dpo/python/*.py
+!src/lambda_layer/dpo/python/setup.py
+!src/lambda_layer/dpo/python/mtl.py
+!src/lambda_layer/requests/*
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+**.DS_Store
+
+# Exclude virtual env
+.venv*/
+
+junit-reports
+**.zip
+**.tar.gz
