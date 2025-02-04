@@ -10,7 +10,7 @@
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "npx aws-cdk@2.92.0",
-    "validate": "npx cdk-cicd validate",
+    "validate": "cdk-cicd validate",
     "validate:fix": "npm run validate -- --fix",
     "audit": "concurrently 'npm:audit:*(!fix)'",
     "audit:deps:nodejs": "npx better-npm-audit@3.7.3 audit --level=high --registry='https://registry.npmjs.org/'",
@@ -18,7 +18,7 @@
     "audit:scan:security": "./scripts/check-code-scan-security.sh",
     "audit:license": "npm run license",
     "audit:fix:license": "npm run license -- --fix",
-    "license": "npx cdk-cicd license",
+    "license": "cdk-cicd license",
     "lint": "npx eslint . --ext .ts --max-warnings 0",
     "lint:fix": "npx eslint . --ext .ts --fix",
     "commitlint": "commitlint --edit"
