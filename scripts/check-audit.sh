@@ -3,6 +3,6 @@
 
 set -e
 
-npm run validate
 npm ci
+npm run validate
 npm run audit
