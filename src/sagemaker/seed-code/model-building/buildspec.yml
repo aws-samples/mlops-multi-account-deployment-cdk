@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - aws codeartifact login --tool pip --repository ${CODE_ARTEFACT_REPO_NAME} --domain ${CODE_ARTEFACT_DOMAIN_NAME} --domain-owner ${ACCOUNT_ID} --region ${AWS_REGION}
+      - pip install --upgrade --force-reinstall . "awscli>1.20.30"
+
+  build:
+    commands:
+      - export PYTHONUNBUFFERED=TRUE
+      - |
+        run-pipeline --module-name pipelines.abalone.pipeline \
+          --role-arn $SAGEMAKER_PIPELINE_ROLE_ARN \
+          --tags "[{\"Key\":\"sagemaker:project-name\", \"Value\":\"${SAGEMAKER_PROJECT_NAME}\"}, {\"Key\":\"sagemaker:project-id\", \"Value\":\"${SAGEMAKER_PROJECT_ID}\"}]" \
+          --kwargs "{\"region\":\"${AWS_REGION}\",\"role\":\"${SAGEMAKER_PIPELINE_ROLE_ARN}\",\"default_bucket\":\"${ARTIFACT_BUCKET}\",\"pipeline_name\":\"${SAGEMAKER_PIPELINE_NAME}\",\"model_package_group_name\":\"${MODEL_PACKAGE_GROUP_NAME}\",\"base_job_prefix\":\"${SAGEMAKER_PIPELINE_NAME}\",\"sagemaker_project_name\":\"${SAGEMAKER_PROJECT_NAME}\",\"kms_key_id\":\"${KMS_KEY_ID}\",\"security_group_id_list\":${SECURITY_GROUP_ID_LIST},\"subnet_id_list\":${SUBNET_ID_LIST}}"
+      - echo "Create/Update of the SageMaker Pipeline and execution completed."
+

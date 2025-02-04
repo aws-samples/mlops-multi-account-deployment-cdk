@@ -1,0 +1,9 @@
+{
+  "package-lock.json": "49b619341554cf5cebb6344820a18655e2d2c5d67be73dd9d79edf0a96be9fb0",
+  "license": {
+    "package.json": "a83ee211eb3064852749e896a30992611410053a9a79b72dc35c0292008f5e6b",
+    "src/sagemaker/seed-code/model-deploy/package.json": "5f5a2581feb54e4b5a9b7064ca0896b7dc088858130339d9f2a075de1f280087",
+    "projectList": "50097cce549713a98e1e23dac43b8632554fb83f65e03b602d8e64e651d6a4a3"
+  },
+  "npm-lock-file": "d82fa01c44fabac7003d28bb7273e4fdfbb35ca69afb2c705c10cc82ca8925f6"
+}

@@ -1,0 +1,60 @@
+{
+  "availability-zones:account=012345678912:region=eu-west-1": [
+    "eu-west-1a",
+    "eu-west-1b",
+    "eu-west-1c"
+  ],
+  "vpc-provider:account=012345678912:filter.vpc-id=vpc-01abc34567d890e1:region=eu-west-1:returnAsymmetricSubnets=true": {
+    "vpcId": "vpc-01abc34567d890e1",
+    "vpcCidrBlock": "11.251.11.128/25",
+    "ownerAccountId": "012345678912",
+    "availabilityZones": [],
+    "subnetGroups": [
+      {
+        "name": "Isolated",
+        "type": "Isolated",
+        "subnets": [
+          {
+            "subnetId": "subnet-01ab23456c7de8fgh",
+            "cidr": "11.251.11.192/27",
+            "availabilityZone": "eu-west-1a",
+            "routeTableId": "rtb-0a121bc34de567f89"
+          },
+          {
+            "subnetId": "subnet-01ab23456c7de8fhg",
+            "cidr": "11.251.11.224/27",
+            "availabilityZone": "eu-west-1b",
+            "routeTableId": "rtb-0a121bc34de567f89"
+          }
+        ]
+      },
+      {
+        "name": "Public",
+        "type": "Public",
+        "subnets": [
+          {
+            "subnetId": "subnet-01ab23456c7de8fgh",
+            "cidr": "11.251.11.128/28",
+            "availabilityZone": "eu-west-1a",
+            "routeTableId": "rtb-0a121bc34de567f89"
+          },
+          {
+            "subnetId": "subnet-01ab23456c7de8fhg",
+            "cidr": "11.251.11.144/28",
+            "availabilityZone": "eu-west-1b",
+            "routeTableId": "rtb-0a121bc34de567f89"
+          }
+        ]
+      }
+    ]
+  },
+  "ssm:account=012345678912:parameterName=/mlops/res/vpc/id:region=eu-west-1": "vpc-01abc34567d890e1",
+  "ssm:account=012345678912:parameterName=/mlops/res/vpc/security-group/id:region=eu-west-1": "sg-01ab34c56de7f8g90",
+  "ssm:account=012345678912:parameterName=/mlops/exp/vpc/id:region=eu-west-1": "vpc-01abc34567d890e1",
+  "ssm:account=012345678912:parameterName=/mlops/exp/vpc/security-group/id:region=eu-west-1": "sg-01ab34c56de7f8g90",
+  "ssm:account=012345678912:parameterName=/mlops/exp/vpc/security-group/sagemaker/id:region=eu-west-1": "sg-01ab34c56de7f8g90",
+  "security-group:account=012345678912:region=eu-west-1:securityGroupId=sg-01ab34c56de7f8g90": {
+    "securityGroupId": "sg-01ab34c56de7f8g90",
+    "allowAllOutbound": false
+  }
+}
