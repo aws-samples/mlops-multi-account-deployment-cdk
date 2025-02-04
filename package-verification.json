@@ -4,5 +4,6 @@
     "package.json": "8c3431aa2805e2d31e9d8605a7c02bb7141e482b60eae5855f6f0aaefc30d983",
     "src/sagemaker/seed-code/model-deploy/package.json": "4f6482fb114f5af0b7247f99e304e2f29b2fc4c0ea567ddc2d7025711e98dfb8",
     "projectList": "50097cce549713a98e1e23dac43b8632554fb83f65e03b602d8e64e651d6a4a3"
-  }
+  },
+  "npm-lock-file": "517d84249908dfdc7fb12f1b0cef97449de7bbe35607eec41010f95fb939fd5d"
 }

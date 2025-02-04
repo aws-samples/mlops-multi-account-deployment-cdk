@@ -19,6 +19,7 @@
     "audit:license": "npm run license",
     "audit:fix:license": "npm run license -- --fix",
     "license": "cdk-cicd license",
+    "lint": "npx eslint . --ext .ts --max-warnings 0",
     "lint:fix": "npx eslint . --ext .ts --fix",
     "commitlint": "commitlint --edit"
   },
@@ -57,12 +58,12 @@
     "typescript": "5.2.2"
   },
   "dependencies": {
-    "@cdklabs/cdk-cicd-wrapper-cli": "^0.2.14",
+    "@cdklabs/cdk-cicd-wrapper-cli": "0.2.14",
     "@cloudcomponents/cdk-pull-request-approval-rule": "2.1.0",
     "@cloudcomponents/cdk-pull-request-check": "2.1.0",
     "@types/uuid": "9.0.3",
     "@typescript-eslint/visitor-keys": "5.62.0",
-    "aws-cdk-lib": "2.92.0",
+    "aws-cdk-lib": "^2.177.0",
     "cdk-monitoring-constructs": "5.10.1",
     "cdk-nag": "2.27.129",
     "constructs": "10.2.70",
